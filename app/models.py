@@ -27,8 +27,9 @@ class Nodes(db.Model,CRUD):
     creation_time = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
     is_active = db.Column(db.Boolean, server_default="false", nullable=False)
 
-    def __init__(self,hostname,is_active):
+    def __init__(self,hostname,ipaddr,is_active):
         self.hostname = hostname
+        self.ipaddr = ipaddr
         self.is_active = is_active
 """
 create table nodes(
